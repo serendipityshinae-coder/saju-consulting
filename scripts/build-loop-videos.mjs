@@ -1,7 +1,18 @@
 import { spawnSync } from "child_process";
 import fs from "fs";
 import path from "path";
-import ffmpegStatic from "ffmpeg-static";
+import { createRequire } from "module";
+
+const require = createRequire(import.meta.url);
+
+function getBundledFfmpegPath() {
+  try {
+    const p = require("ffmpeg-static");
+    return typeof p === "string" && fs.existsSync(p) ? p : null;
+  } catch {
+    return null;
+  }
+}
 
 /** `main_bg.mp4` → `main_bg_loop.mp4` */
 export function loopVideoFileName(file) {
@@ -20,9 +31,8 @@ function resolveFfmpegPath() {
   if (process.env.FFMPEG_PATH && fs.existsSync(process.env.FFMPEG_PATH)) {
     return process.env.FFMPEG_PATH;
   }
-  if (ffmpegStatic && fs.existsSync(ffmpegStatic)) {
-    return ffmpegStatic;
-  }
+  const bundled = getBundledFfmpegPath();
+  if (bundled) return bundled;
   const r = spawnSync("ffmpeg", ["-version"], { stdio: "ignore" });
   if (r.status === 0) return "ffmpeg";
   return null;
@@ -99,9 +109,14 @@ export function ensureLoopVideoInDir(dir, originalFileName) {
     return { playbackFile: originalFileName, built: null };
   }
 
-  const inputPath = path.join(dir, originalFileName);
   const loopName = loopVideoFileName(originalFileName);
   const outputPath = path.join(dir, loopName);
+
+  if (fs.existsSync(outputPath)) {
+    return { playbackFile: loopName, built: { ok: true, skipped: true } };
+  }
+
+  const inputPath = path.join(dir, originalFileName);
 
   const built = buildPingPongVideo(inputPath, outputPath);
   if (built.ok) {

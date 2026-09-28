@@ -44,7 +44,7 @@ function pickHeroImage(files) {
 }
 
 if (!fs.existsSync(srcDir)) {
-  console.log("[sync-source-media] source/ 폴더 없음 — 건너뜀");
+  console.log("[sync-source-media] source/ 폴더 없음 — public/source 유지");
   process.exit(0);
 }
 
