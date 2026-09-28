@@ -2,6 +2,16 @@
 
 Next.js + TypeScript 사주 계산 엔진과 OpenAI 상담을 결합한 웹 서비스입니다.
 
+## 배포 (Vercel)
+
+- GitHub 저장소: `serendipityshinae-coder/saju-consulting`
+- Vercel **프로젝트 이름(권장)**: `saju-sangdamso-mvp`  
+  → 배포 URL 예: `https://saju-sangdamso-mvp.vercel.app` 또는  
+  `https://saju-sangdamso-mvp-serendipityshinae-coder.vercel.app`
+- **`https://saju-consulting.vercel.app`는 다른 사람(팔자핏) 사이트**이므로 사용하지 마세요.
+
+Vercel 대시보드 → 해당 프로젝트 → **Settings → General → Project Name**을 `saju-sangdamso-mvp`로 저장하면 도메인이 갱신됩니다.
+
 ## 실행
 
 ```bash

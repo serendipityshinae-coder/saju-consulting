@@ -1,5 +1,6 @@
 {
   "$schema": "https://openapi.vercel.sh/vercel.json",
+  "name": "saju-sangdamso-mvp",
   "framework": "nextjs",
   "installCommand": "npm install --include=dev",
   "buildCommand": "npm run build"
