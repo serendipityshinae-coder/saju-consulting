@@ -1,0 +1,93 @@
+[
+  {
+    "description": "1984-04-15 14:30 Seoul female",
+    "birthDate": "1984-04-15",
+    "birthTime": "14:30",
+    "timezone": "Asia/Seoul",
+    "gender": "female",
+    "expected": {
+      "year": "甲子",
+      "month": "戊辰",
+      "day": "己卯",
+      "hour": "辛未"
+    }
+  },
+  {
+    "description": "2000-01-01 00:00",
+    "birthDate": "2000-01-01",
+    "birthTime": "00:00",
+    "timezone": "Asia/Seoul",
+    "gender": "male",
+    "expected": {
+      "year": "己卯",
+      "month": "丙子",
+      "day": "戊午",
+      "hour": "壬子"
+    }
+  },
+  {
+    "description": "1990-02-04 before ipchun sample",
+    "birthDate": "1990-02-04",
+    "birthTime": "08:00",
+    "timezone": "Asia/Seoul",
+    "gender": "female",
+    "expected": {
+      "year": "己巳",
+      "month": "丁丑",
+      "day": "庚子",
+      "hour": "庚辰"
+    }
+  },
+  {
+    "description": "1975-08-20 06:15",
+    "birthDate": "1975-08-20",
+    "birthTime": "06:15",
+    "timezone": "Asia/Seoul",
+    "gender": "male",
+    "expected": {
+      "year": "乙卯",
+      "month": "甲申",
+      "day": "戊戌",
+      "hour": "乙卯"
+    }
+  },
+  {
+    "description": "1988-12-01 12:00",
+    "birthDate": "1988-12-01",
+    "birthTime": "12:00",
+    "timezone": "Asia/Seoul",
+    "gender": "female",
+    "expected": {
+      "year": "戊辰",
+      "month": "癸亥",
+      "day": "庚寅",
+      "hour": "壬午"
+    }
+  },
+  {
+    "description": "1995-03-21 18:45",
+    "birthDate": "1995-03-21",
+    "birthTime": "18:45",
+    "timezone": "Asia/Seoul",
+    "gender": "male",
+    "expected": {
+      "year": "乙亥",
+      "month": "己卯",
+      "day": "辛亥",
+      "hour": "丁酉"
+    }
+  },
+  {
+    "description": "2010-11-11 21:10",
+    "birthDate": "2010-11-11",
+    "birthTime": "21:10",
+    "timezone": "Asia/Seoul",
+    "gender": "male",
+    "expected": {
+      "year": "庚寅",
+      "month": "丁亥",
+      "day": "乙丑",
+      "hour": "丁亥"
+    }
+  }
+]
